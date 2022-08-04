@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_TOKEN, API_URL } from "../consts";
-import LoadingIcon from "../Loading.svg";
+import Loading from "./Loading";
 
 const RecordedCorona = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ const RecordedCorona = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full">
       {loading ? (
-        <img src={LoadingIcon} />
+        <Loading />
       ) : (
         <div className="p-12">
           <h1 className="text-lg md:text-4xl lg:text-6xl text-gray-900 mb-4">
