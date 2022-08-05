@@ -15,7 +15,7 @@ function App() {
         }}
       />
 
-      <div className="md:container md:mx-auto p-8 page-content">
+      <div className="w-full p-8 md:p-6 page-content">
         {key === 1 && <CoronaForCountry />}
         {key === 2 && <RecordedCorona />}
         {key === 3 && <CoronaForContinent />}

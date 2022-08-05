@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_TOKEN, API_URL } from "../consts";
-import LoadingIcon from "../Loading.svg";
+import Loading from "./Loading";
 
 const CoronaForContinent = () => {
   const [headers] = useState([
@@ -51,21 +51,21 @@ const CoronaForContinent = () => {
     fetchData();
   }, []);
   return (
-    <div className="flex flex-col">
-      <div className="inline-block min-w-full">
-        <h1 className="texl-2xl mb-4 font-bold text-gray-900">Corona Table</h1>
+    <div className="flex flex-col items-center mt-12">
+      <div className="lg:w-4/5 w-full">
+        <h1 className="text-2xl mb-4 font-bold text-gray-900">Corona Table</h1>
         <div className="overflow-scroll md:overflow-hidden shadow-md">
           {loading ? (
-            <img src={LoadingIcon} />
+            <Loading />
           ) : (
-            <table className="max-w-full">
+            <table className="w-full">
               <thead className="bg-gray-600">
                 <tr>
                   {headers.map((item) => {
                     return (
                       <th
                         key={item.title}
-                        className="py-3 px-6 text-[6px] md:text-[10px] font-medium text-gray-300 uppercase text-left lg:text-xs"
+                        className="py-3 px-6 text-[6px] md:text-xs font-medium text-gray-300 uppercase text-left lg:text-xs"
                       >
                         {item.title}
                       </th>
@@ -81,7 +81,7 @@ const CoronaForContinent = () => {
                         return (
                           <td
                             key={subItem.value}
-                            className="py-4 px-6 text-[8px] font-medium text-white whitespace-nowrap lg:text-sm"
+                            className="py-4 px-6 text-[8px] font-medium text-white whitespace-nowrap md:text-[12px] lg:text-sm"
                           >
                             {item[subItem.value]}
                           </td>
